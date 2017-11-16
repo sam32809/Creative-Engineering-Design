@@ -1,0 +1,39 @@
+
+#include <SD.h>
+#include <TMRpcm.h> 
+TMRpcm tmrpcm;
+
+int wasPlaying = 0;
+int finished = 0;
+int start = 0;
+
+void setup() {
+  Serial.begin(9600);
+  Serial.print("\nInitializing SD card...");
+  pinMode(10, OUTPUT); 
+  if (!SD.begin(10)) {                                   // set this to your card type and cs pin
+    Serial.println("failed!");
+    return;
+  }
+  Serial.println("done.");
+  tmrpcm.speakerPin = 9;
+}
+
+void loop() {
+  start = 1;
+  playNext();
+  if(tmrpcm.isPlaying())
+    while(tmrpcm.isPlaying());
+  tmrpcm.stopPlayback();
+}
+
+void playNext() {
+  if(wasPlaying == 1) {
+    Serial.println("Completed playback.");
+    wasPlaying = 0;
+    finished = 1;
+    start = 0;
+  }
+  tmrpcm.play("your file name goes here.WAV");           // put your engine file name here
+  wasPlaying = 1;  
+}
