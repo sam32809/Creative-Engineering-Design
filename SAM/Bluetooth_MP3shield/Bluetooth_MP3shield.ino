@@ -19,6 +19,7 @@ Serial.begin(9600);
 sd.begin(SD_SEL, SPI_HALF_SPEED);
 MP3player.begin();
 BTSerial.begin(9600);
+MP3player.setVolume(-);  
 
 
 }
@@ -35,7 +36,7 @@ if(BTSerial.available())
    
 
   if(c='1'){
-    MP3player.playTrack(a);
+    MP3player.playTrack(a); 
      Serial.write(c);
   }
   if(c='2'){
