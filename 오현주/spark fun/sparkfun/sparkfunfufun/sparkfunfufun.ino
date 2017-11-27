@@ -15,7 +15,6 @@ MP3player.begin();
 MP3player.playTrack(1);
 }
 void loop(){
-Serial.println("I'm bored!");
 delay(2000);
 MP3player.playTrack(2);
 }
