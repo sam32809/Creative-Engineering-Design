@@ -5,8 +5,8 @@
 #include <Adafruit_NeoPixel.h>
 
 #define PIN 10            // 디지털핀 어디에 연결했는지 입력
-#define LEDNUM 7          // 연결된 네오픽셀의 숫자입력 
-#define BRIGHTNESS 100    // 네오픽셀의 밝기를 설정합니다. (0~255) 
+#define LEDNUM 12          // 연결된 네오픽셀의 숫자입력 
+#define BRIGHTNESS 200    // 네오픽셀의 밝기를 설정합니다. (0~255) 
 
 SdFat sd;
 SFEMP3Shield MP3player;
@@ -30,9 +30,17 @@ void loop() {
   strip.begin();                           // 네오픽셀 제어시작 
   strip.show();                            // 네오픽셀 초기화 
   strip.setPixelColor(0, 200, 0, 0);     // (A,R,G,B,W) A번째 LED를 RGBW (0~255) 만큼의 밝기로 켭니다. 
-  strip.setPixelColor(1, 0, 100, 0); 
-  strip.setPixelColor(2, 0, 0, 200); 
-  strip.setPixelColor(3, 0, 0, 200, 100); 
+  strip.setPixelColor(1, 200, 0, 0); 
+  strip.setPixelColor(2, 200, 0, 0); 
+  strip.setPixelColor(3, 200, 0, 0); 
+  strip.setPixelColor(4, 0, 200, 0);     // (A,R,G,B,W) A번째 LED를 RGBW (0~255) 만큼의 밝기로 켭니다. 
+  strip.setPixelColor(5, 0, 200, 0); 
+  strip.setPixelColor(6, 0, 200, 0); 
+  strip.setPixelColor(7, 0, 200, 0);
+  strip.setPixelColor(8, 0, 0, 200);     // (A,R,G,B,W) A번째 LED를 RGBW (0~255) 만큼의 밝기로 켭니다. 
+  strip.setPixelColor(9, 0, 0, 200); 
+  strip.setPixelColor(10, 0, 0, 200); 
+  strip.setPixelColor(11, 0, 0, 200);
   delay(5000);
 
   MP3player.stopTrack();
