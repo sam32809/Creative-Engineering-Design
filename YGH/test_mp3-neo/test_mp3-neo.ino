@@ -1,3 +1,5 @@
+#include <SoftwareSerial.h>
+
 /*  MP3player.stopTrack(); 멈춤
 MP3player.setVolume(volume, volume);
 MP3player.SetVolume(0x00, 0x00)*/
@@ -5,9 +7,11 @@ MP3player.SetVolume(0x00, 0x00)*/
 #include <SdFat.h>
 #include <SdFatUtil.h>
 #include <SFEMP3Shield.h>
+
 SdFat sd;
 SFEMP3Shield MP3player;
-int val;
+
+
 void setup(){
 Serial.begin(9600);
 sd.begin(SD_SEL, SPI_HALF_SPEED);
