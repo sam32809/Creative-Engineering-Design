@@ -30,6 +30,11 @@ while(Serial.available()){
   case 'j':MP3player.stopTrack();MP3player.playTrack(10);break;
   case 'k':MP3player.stopTrack();MP3player.playTrack(11);break;
  }
+ if(data>='a' && data<='k')
+{
+MP3player.stopTrack();
+MP3player.playTrack(data-'a'+1);
+}
   Serial.write(data);
  
 }}

@@ -169,7 +169,7 @@ if(digitalRead(5)==HIGH){
     analogWrite(A1,0);
   }
   
-  if(digitalRead(8)==1)
+  if(digitalRead(8)==HIGH)
   {
     Serial.println("f");
     analogWrite(A3,255);
